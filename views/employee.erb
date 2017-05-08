@@ -1,0 +1,11 @@
+<h2><%= @employee.name %></h2>
+<h4><%= @employee.division.name unless @employee.division.nil? %></h4>
+<% unless @employee.project.nil? %>
+<h4>Current Project:<%= @employee.project.name %></h4>
+<% end %>
+
+<form action="/employee/<%= @employee.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="btn btn-danger" type="submit">Delete Employee</button>
+</form>
+<a href="/" class="btn btn-info">Home</a>

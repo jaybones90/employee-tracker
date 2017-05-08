@@ -5,6 +5,7 @@ require 'pry'
 require 'rake'
 require 'employee'
 require 'division'
+require 'project'
 
 
 RSpec.configure do |config|

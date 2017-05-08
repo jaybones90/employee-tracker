@@ -1,16 +1,24 @@
 <a href="/employee/add" class="btn btn-info">Add a new employee</a>
 <a href="/division/add" class="btn btn-info">Add a new division</a>
+<a href="/project/add" class="btn btn-info">Add a new project</a>
 
 <h2>All Divisions</h2>
 <ul>
 <% @all_divisions.each do |division| %>
-<li><a href="/division/<%=division.id%>"><%= division.name %></a></li>
+<li><a href="/division/<%= division.id %>"><%= division.name %></a></li>
 <% end %>
 </ul>
 
 <h2>All Employees</h2>
 <ul>
 <% @all_employees.each do |employee| %>
-<li><a href="/employee/<%=employee.id%>"><%= employee.name %></a></li>
+<li><a href="/employee/<%= employee.id %>"><%= employee.name %></a></li>
+<% end %>
+</ul>
+
+<h2>All Projects</h2>
+<ul>
+<% @all_projects.each do |project| %>
+<li><a href="/project/<%= project.id %>"><%= project.name %></a></li>
 <% end %>
 </ul>
