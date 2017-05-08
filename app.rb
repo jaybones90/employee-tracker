@@ -36,3 +36,19 @@ post('/division/add') do
   @all_employees = Employee.all
   erb(:index)
 end
+
+get('/division/:id') do
+  @employees = Employee.all
+  @division = Division.find(params.fetch('id').to_i)
+  erb(:division)
+end
+
+patch('/division/:id/employee') do
+  @all_employees = Employee.all
+  @all_divisions = Division.all
+  @employee = params['employee'].to_i
+  @division = Division.find(params.fetch('id').to_i)
+  current_employee = Employee.find(@employee)
+  current_employee.update(division_id: @division.id)
+  erb(:index)
+end
